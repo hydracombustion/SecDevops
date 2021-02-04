@@ -1,0 +1,9 @@
+Bonjour Damien, 
+J’espère que ça va. Je voulais t’informer de mon avancement, comme tu le sais j’ai commencé à travailler sur le billet d’humeur. J’étais bloqué la semaine dernière sur comment présenter ce dernier à un développeur et ceci de façon naturelle. Etant plus dans la technique que dans la pédagogie, je suis partie sur un petit programme C++ qui sera très utile dans l’enrichissement du Wiki, dans lequelle je démontre qu’à partir d’un vuln de type Buffer Overflow liée à la validation d’input je peux directement intervenir sur le serveur. Je sais que nous avons déjà des exemples, mais j’ai poussé un peu plus l’exploitation de ces exemples afin de démonter qu’il est possible en exploitant l’input et en y insérant ce qu’on appelle un shell code d’ouvrir un shell à distance ou détourner le programme pour faire appel à d’autre commandes. Je me sers de ce programme que je te joins en copie pour illustrer le billet d’humeur et le terminer.
+J’en profite également pour t’informer que je ne serai pas présente la semaine prochaine étant en congé, il me semble que je t’en avais déjà informer mais c’est on jamais. 
+
+
+
+
+We have learned that a buffer overflow is caused by certain conditions where a running program is writing data outside the memory buffer. By injecting (shell)code and redirecting the execution flow of a running program to that code, an attacker is able to execute that code. This is called arbitrary code execution. With arbitrary code execution an attacker is able to gain (remote) control of a specific target, elevate privileges or cause a denial of service on the target.
+Buffer overflows can be proactively prevented and mitigated with several techniques. Programmers should write secure code and test it for buffer overflows. When a buffer overflow is not prevented from happening it can still be mitigated with reactive methods like protecting memory from being written to.
