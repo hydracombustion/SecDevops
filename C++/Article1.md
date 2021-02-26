@@ -1,4 +1,4 @@
-# How mitigate the use of potentially dangerous Function
+# How mitigate the use of potentially dangerous Function in C/C++
 
 ### Risks of Reimplementation
 Functions that are considered dangerous today were created because they provided functionality that programmers found useful. When the behavior of a dangerous function is replicated in proprietary code, the overall security of the program is worse off than if the dangerous function were used directly because it can no longer be identified by name alone.
