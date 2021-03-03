@@ -5,10 +5,16 @@ Listes des buffers
 Expliquer les différences entre les buffer avec phrase courte. 
 liens vers les articles sur Wiki + liens vers billet d'humeur.
 
+
+http://capec.mitre.org/data/definitions/10.html
+https://cwe.mitre.org/data/definitions/1218.html
+
 ## Buffer Overflow Unbounded format
 
-## Buffer Overflow Unbounded String
+https://cwe.mitre.org/data/definitions/119.html
 
+## Buffer Overflow Unbounded String
+Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')
 
 ## Off-by-one Overflow
 
