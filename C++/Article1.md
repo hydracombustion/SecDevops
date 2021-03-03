@@ -19,3 +19,15 @@ Look :
 * https://cwe.mitre.org/data/definitions/676
 * https://cwe.mitre.org/data/definitions/119
 * https://www.sans.org/top25-software-errors/#cat2
+
+
+strcpy |strncpy |strlcpy/strcpy_s
+strcat |strncat |strlcat/strcat_s -strtok
+sprintf |snprintf
+vsprintf |vsnprintf
+gets |fgets/gets_s
+makepath |_makepath_s (MSDN)
+_splitpath |_splitpath_s (MSDN)
+scanf/sscanf |sscanf_s (MSDN)
+snscanf |_snscanf_s (MSDN)
+strlen |strnlen_s (MSDN)
