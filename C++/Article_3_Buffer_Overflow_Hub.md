@@ -49,8 +49,31 @@ The software uses a method to read or write a buffer, but it uses **an incorrect
 For more infos about this vulnerability, look at this article:
 * [Buffer Overflow Wrong Buffer Size ](Buffer_Overflow_Wrong_Buffer_Size.md)
 
-
 ## Buffer Overflow Address Of Local Var Returned 
+
+
+## Off-by-one Overflow
+Overflows can also appear in for or while loops if there are errors with the indices or in the loop condition for example. 
+
+Example of No-compliant code: 
+```
+char npath[64];
+int i;
+for (i = 0; i <= sizeof(npath); i++, name++) {
+  npath[i] = *name;
+}
+```
+ 
+In this example, the size of npath is 63 + the end character \0. The program will iterate 64 times until it exceeds the size of npath. The attacker can exploit this vulnerability in order to take the control of your program. 
+
+Example of Compliant code: 
+```
+char npath[64];
+int i;
+for (i = 0; i < sizeof(npath)-1; i++, name++) {
+  npath[i] = *name;
+}
+```
 
 ## Others...
 ### Heuristic 2nd Order Buffer Overflow malloc
@@ -60,20 +83,3 @@ For more infos about this vulnerability, look at this article:
 * http://capec.mitre.org/data/definitions/10.html
 * https://cwe.mitre.org/data/definitions/1218.html
 
-## Off-by-one Overflow
-* [Off by One Error](offbyone.md)
-
-```
-char npath[MAXPATHLEN];
-int i;
-for (i = 0; *name != '\0' && i < sizeof(npath) - 1; i++, name++) {
-  npath[i] = *name;
-}
-```
-La boucle for contruit correctement l'itération en faisant varier i de 0 à MAXPATHLEN-1
-ainsi il s'agit bien de npath[MAXPATHLEN-1] qui est mis à '\0' après la boucle.
-Toutefois, si la condition du if à l'intérieur est rencontrée la variable i est incrémentée
-et npath[MAXPATHLEN] cette fois, est mis à '\0', soit 1 byte en dehors du buffer. 
-Des overflows peuvent aussi apparaître dans des boucles for ou while s’il y a des erreurs
-avec les indices ou dans la condtion de la boucle par exemple. Ces overflows peuvent
-être très difficiles à détécter.
