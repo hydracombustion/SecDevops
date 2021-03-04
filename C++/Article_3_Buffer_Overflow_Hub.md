@@ -1,10 +1,18 @@
 # Buffer overflow Hub
+This article will help you to understand what is the difference between each types of buffer Overflow that you can find in your reports. 
 
-Different types of Buffer 
-Listes des buffers
-Expliquer les différences entre les buffer avec phrase courte. 
-liens vers les articles sur Wiki + liens vers billet d'humeur.
+//Expliquer les différences entre les buffer avec phrase courte. 
+//liens vers les articles sur Wiki + liens vers billet d'humeur.
 
+## Buffer Overflow Cin
+## Buffer Overflow Long String
+## Buffer Overflow Unbounded Buffer
+## Buffer Overflow Wrong Buffer Size
+## Buffer Overflow Address Of Local Var Returned 
+
+## Others...
+### Heuristic 2nd Order Buffer Overflow malloc
+### Heuristic 2nd Order Buffer Overflow read
 
 http://capec.mitre.org/data/definitions/10.html
 https://cwe.mitre.org/data/definitions/1218.html
