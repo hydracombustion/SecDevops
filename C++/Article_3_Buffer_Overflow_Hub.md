@@ -1,5 +1,4 @@
 # Buffer overflow Hub
-<font color='red'>test blue color font</font>
 This article will help you to understand what is the difference between each types of buffer Overflow that you can find in your reports. 
 
 ### Buffer Overflow Cin
