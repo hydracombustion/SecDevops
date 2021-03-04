@@ -1,12 +1,20 @@
 # Buffer overflow Hub
+<font color='red'>test blue color font</font>
 This article will help you to understand what is the difference between each types of buffer Overflow that you can find in your reports. 
 
-//Expliquer les différences entre les buffer avec phrase courte. 
-//liens vers les articles sur Wiki + liens vers billet d'humeur.
+### Buffer Overflow Cin
 
-## Buffer Overflow Cin
+Example of Non-compliant code: 
+```
+    char action[255];
+    cin >> action;
+```
+This vulnerability become when you use the "cin" function. In this example, the attacker can write more than 255 characters and generate a buffer overflow because the input is not verify and can be write into a smaller buffer without size verification.The attacker's data overwrites whatever is next on the stack, allowing the attacker to control program structures.
+
 ## Buffer Overflow Long String
 ## Buffer Overflow Unbounded Buffer
+Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')
+## Buffer Overflow Unbounded Format
 ## Buffer Overflow Wrong Buffer Size
 ## Buffer Overflow Address Of Local Var Returned 
 
@@ -14,15 +22,9 @@ This article will help you to understand what is the difference between each typ
 ### Heuristic 2nd Order Buffer Overflow malloc
 ### Heuristic 2nd Order Buffer Overflow read
 
-http://capec.mitre.org/data/definitions/10.html
-https://cwe.mitre.org/data/definitions/1218.html
-
-## Buffer Overflow Unbounded format
-
-https://cwe.mitre.org/data/definitions/119.html
-
-## Buffer Overflow Unbounded String
-Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')
+## Links
+* http://capec.mitre.org/data/definitions/10.html
+* https://cwe.mitre.org/data/definitions/1218.html
 
 ## Off-by-one Overflow
 
