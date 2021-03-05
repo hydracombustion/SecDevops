@@ -14,7 +14,6 @@ Functions that are considered dangerous today were created because they provided
 |<ul><li>_makepath</li></ul>|_makepath does not ensure that the length of the composite path string does not exceed _MAX_PATH. | <ul><li>_makepath_s (MSDN)</li></ul> |Use a null-terminated string. To avoid buffer overflow, the null-terminated string must not exceed the size of the path buffer.|
 |<ul><li>strlen</li></ul>|strlen is unsafe for null pointers. <br> Like this example:<br> ```char* str = (char*)NULL; ``` <br> ``` size_t len = strlen(str);  /* segmentation fault -- crash */ ```| <ul><li>strnlen_s (MSDN)</li></ul> |```#define strlen(S) ( (S==NULL) ? 0 : strlen(S)) ``` will stop the seg fault and return 0 as expected.|
 |<ul><li></li></ul>|x| <ul><li> </li></ul> |x|
-|<ul><li>fflush(stdin)</li></ul> |fflush is considered as unsafe because |<ul><li>fflush(stdout)</li></ul>| The stream must be used for output. The standard says: If stream points to an output stream or an update stream in which the most recent operation was not input, the fflush function causes any unwritten data for that stream to be delivered to the host environment to be written to the file; otherwise, the behavior is undefined.
  |<ul><li></li></ul> | |<ul><li></li></ul> | https://levelup.gitconnected.com/introduction-to-secure-coding-in-c-and-c-d8ece627facb|
   
 
