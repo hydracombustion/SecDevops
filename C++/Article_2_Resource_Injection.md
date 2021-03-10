@@ -13,6 +13,13 @@ It could enable an attacker to access or modify otherwise protected system resou
   ServerSocket srvr = new ServerSocket(rPort); 
   Socket skt = srvr.accept();  ...
 ```
+or 
+```
+  String rPort = getenv(argv[1]); 
+  ... 
+  ServerSocket srvr = new ServerSocket(rPort); 
+  Socket skt = srvr.accept();  ...
+```
 
 ## Compliant code:
 ```
@@ -29,7 +36,8 @@ It could enable an attacker to access or modify otherwise protected system resou
 * Do not allow a user or untrusted data to define sensitive parameters. 
 * sanitize the input parameter
 * Control the input data with a white list of port for example or other controls. 
-* Verify that environment variable is secure. If you use getenv() with a static argument, check that this environnement variable can not be modify,read by an attacker.  
+* Verify that environment variable is secure. If you use getenv() with a static argument, check that this environnement variable can not be modify,read by an attacker. 
+* Do not allow the user to manipulate the environnement variable.  
 
 Views this link for further informations: https://owasp.org/www-community/attacks/Resource_Injection
 
